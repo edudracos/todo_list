@@ -3,7 +3,7 @@ from datetime import datetime
 from deta import Deta
 
 # Inicializar Deta
-deta = Deta('b0cxuakhz6a_JrrQPS8PTHoC4Fzg6HmnutDzJUFHwdUu')
+deta = Deta(st.secrets["DETA_KEY"])
 tasks_db = deta.Base('tasks_db')
 
 def add_task(task, due_datetime):
