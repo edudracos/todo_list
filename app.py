@@ -14,7 +14,7 @@ reminder_config_db = deta.Base('reminder_config_db')
 # Configuración de Twilio
 account_sid = st.secrets['ACCOUNT_SID']
 auth_token = st.secrets['AUTH_TOKEN']
-twilio_phone_number = st.secrets['NUMERO_TWILIO']
+twilio_number = st.secrets['NUMERO_TWILIO']
 
 time_zone_options = ['America/New_York', 'America/Los_Angeles', 'America/chicago', 'Asia/Tokyo']
 
@@ -34,7 +34,7 @@ def send_sms(message):
     client = Client(account_sid, auth_token)
     client.messages.create(
         body=message,
-        from_=twilio_phone_number,
+        from_=twilio_number,
         to=user_phone_number
     )
 
